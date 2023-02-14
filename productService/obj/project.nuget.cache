@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ZzEuBSO0ayzPTic2kopNG5YvqQSbTD0rIDcBMGusDoM6ruz+LYfmIEiAszetANyleSIzcZ+S85YdwZsnxU1ixg==",
+  "dgSpecHash": "+frUCIBlWEEKiG8pBQvWLrotCX1ut3qJW63kzb9XWi/twMIPwg4U04KlfFJPMbmppK7h1yw/kqe2AZqd7z++tw==",
   "success": true,
   "projectFilePath": "D:\\microservices\\productService\\productservice.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.1\\microsoft.aspnetcore.jsonpatch.3.1.1.nupkg.sha512",
+    "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.1\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.1.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -25,6 +27,8 @@
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.0\\microsoft.extensions.logging.abstractions.3.1.0.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.extensions.options\\3.1.0\\microsoft.extensions.options.3.1.0.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.0\\microsoft.extensions.primitives.3.1.0.nupkg.sha512",
+    "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\system.collections.immutable\\1.7.0\\system.collections.immutable.1.7.0.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.0\\system.diagnostics.diagnosticsource.4.7.0.nupkg.sha512"

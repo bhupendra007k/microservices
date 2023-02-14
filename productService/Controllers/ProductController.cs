@@ -32,6 +32,22 @@ namespace productservice.Controllers
 
         }
 
+        [HttpGet("cat/{id}")]
+        public async Task<IActionResult> GetAllProductsByCategory(Guid Id)
+        {
+            var res = await _productRepository.GetAllProductsByCategory(Id);
+
+            return Ok(res);
+        }
+
+        [HttpGet("{id}")]
+
+        public async Task<IActionResult> GetProductById(Guid Id)
+        {
+            var res = await _productRepository.GetProductById(Id);
+            return Ok(res);
+        }
+
         [HttpPost("add")]
         public async Task<IActionResult> AddProduct([FromForm] Product product)
         {
@@ -47,8 +63,23 @@ namespace productservice.Controllers
             var res = await _productRepository.UpdateProduct(id, product);
             return Ok(res);
         }
-        
-            
+
+        [HttpDelete("delete/{id}")]
+
+        public IActionResult RemoveProduct(Guid Id)
+        {
+            var res = _productRepository.RemoveProduct(Id);
+            if (res == true)
+            {
+                return Ok($"product with id:{Id} is removed successfully");
+            }
+            return NotFound($"No item with id:{Id} found");
+        }
+
+
+
+
+
 
 
     }

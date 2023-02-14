@@ -12,5 +12,10 @@ namespace productservice.Repositories
         Task<Product> AddProduct(Product product);
 
         Task<Product> UpdateProduct(Guid productId, Product product);
+
+        Task<ProductCategory> GetAllProductsByCategory(Guid Id);
+
+        bool RemoveProduct(Guid Id);
+        Task<Product> GetProductById(Guid Id);
     }
 }

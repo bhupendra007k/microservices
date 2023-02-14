@@ -20,11 +20,11 @@ namespace productservice.Data
         public DbSet<ProductCategory> ProductCategory { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase("Ecommerce");
+            optionsBuilder.UseInMemoryDatabase(databaseName:"Ecommerce");
         }
 
 
-        protected override void OnModelCreating(ModelBuilder modelbuilder)
+       /* protected override void OnModelCreating(ModelBuilder modelbuilder)
         {
             modelbuilder.Entity<ProductCategory>().HasData(
                 new ProductCategory {
@@ -43,7 +43,7 @@ namespace productservice.Data
                     Description = "cscssadasddc"
                 }
                 );
-        }
+        }*/
 
 
 

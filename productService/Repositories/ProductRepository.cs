@@ -23,56 +23,24 @@ namespace productservice.Repositories
             _logger = logger;
             
         }
-
-
-    /*    public List<Product> products = new List<Product>
-        {
-            new Product
-            {
-                Name="Denim Shirt",
-                Description="askjdnasklndlk",
-                ProductCategory=new ProductCategory{Name="Shirt",Description="Men's Shirt"},
-                Price=20.10,
-                Discount=new Discount
-                {
-                     Name="Red black sale",
-                     Description="adkmasldm",
-                     DiscountPercent=20,
-                     Active=true
-                }
-            },
-            new Product
-            {
-                Name="Denim jacket",
-                Description="askjdnasklndlk",
-                ProductCategory=new ProductCategory{Name="Jacket",Description="Men's Shirt"},
-                Price=20.10,
-                Discount=new Discount
-                {
-                    Name="Red black sale",
-                    Description="adkmasldm",
-                    DiscountPercent=20,
-                    Active=true
-                }
-            }
-
-        };*/
-
-
-
         public async Task<List<Product>> GetProducts()
         {
           
             var list = await _context.Products.ToListAsync();
-            /*_logger.LogInformation($"helu:{list.ToArray()[0].ProductCategory}");*/
             return list;
         }
 
         public async Task<Product> AddProduct(Product product)
         {
-            await _context.Products.AddAsync(product);
-           /* await _context.ProductCategory.AddAsync(product.Category);
-            await _context.Discount.AddAsync(product.Discount);*/
+ 
+            var category = _context.ProductCategory.Where(x => x.Name == product.ProductCategory).FirstOrDefault();
+            product.ProductCategoryId = category.Id;
+
+            if (product.ProductCategory == category.Name)
+            {
+                _context.Products.Add(product);
+            }
+
             await _context.SaveChangesAsync();
             return product;
 
@@ -88,6 +56,31 @@ namespace productservice.Repositories
                  _context.Products.Update(product);
             }
             await _context.SaveChangesAsync();
+            return product;
+        }
+
+
+        public async Task<ProductCategory> GetAllProductsByCategory(Guid Id)
+        {
+           var category=_context.ProductCategory.Where(x => x.Id == Id).FirstOrDefault();
+           return category;
+        }
+
+        public bool RemoveProduct(Guid Id)
+        {
+            var product = _context.Products.Find(Id);
+            if (product != null)
+            {
+                _context.Products.Remove(product);
+                _context.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+        public async Task<Product> GetProductById(Guid Id)
+        {
+            var product = await _context.Products.FindAsync(Id);
             return product;
         }
 
