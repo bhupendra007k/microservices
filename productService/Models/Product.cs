@@ -14,13 +14,14 @@ namespace productservice.Models
         public string Description { get; set; }
         public double Price { get; set; }
         public string ProductCategory { get; set; }
+        public string? Sale { get; set; }
 
         //Navigation Properties
         public Guid? ProductCategoryId { get; set; }
         public virtual ProductCategory Category { get; set; }
 
         public Guid DiscountId { get; set; }
-        public  Discount Discount { get; set; }
+        public virtual Discount Discount { get; set; }
      
        
 

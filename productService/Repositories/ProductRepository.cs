@@ -20,7 +20,7 @@ namespace productservice.Repositories
         public ProductRepository(DataContext context,ILogger<ProductRepository> logger)
         {
             _context = context;
-            _logger = logger;
+            _logger = logger;   
             
         }
         public async Task<List<Product>> GetProducts()
@@ -30,15 +30,26 @@ namespace productservice.Repositories
             return list;
         }
 
-        public async Task<Product> AddProduct(Product product)
+        public async Task<Product> AddProduct(Guid Id,Product product)
         {
  
             var category = _context.ProductCategory.Where(x => x.Name == product.ProductCategory).FirstOrDefault();
+            var sale = _context.Discount.Where(x => x.Name == product.Sale).FirstOrDefault();
+            if (sale != null)
+            {
+                product.DiscountId = sale.Id;
+            }
             product.ProductCategoryId = category.Id;
 
-            if (product.ProductCategory == category.Name)
+            if (product.Id == null || product.Id == Guid.Empty)
             {
                 _context.Products.Add(product);
+
+            }
+
+            else
+            {
+                _context.Products.Update(product);
             }
 
             await _context.SaveChangesAsync();
@@ -47,9 +58,9 @@ namespace productservice.Repositories
         }
 
 
-        public async Task<Product> UpdateProduct(Guid productId,Product product)
+       /* public async Task<Product> UpdateProduct(Guid productId,Product product)
         {
-            var res = _context.Products.Where(x => x.Id == productId);
+            var res = _context.Products.Where(x => x.Id == productId).FirstOrDefault();
             await _context.Products.FindAsync(productId);
             if (res!=null)
             {
@@ -57,7 +68,7 @@ namespace productservice.Repositories
             }
             await _context.SaveChangesAsync();
             return product;
-        }
+        }*/
 
 
         public async Task<ProductCategory> GetAllProductsByCategory(Guid Id)

@@ -9,9 +9,7 @@ namespace productservice.Repositories
     {
         Task<List<Product>> GetProducts();
 
-        Task<Product> AddProduct(Product product);
-
-        Task<Product> UpdateProduct(Guid productId, Product product);
+        Task<Product> AddProduct(Guid Id,Product product);
 
         Task<ProductCategory> GetAllProductsByCategory(Guid Id);
 

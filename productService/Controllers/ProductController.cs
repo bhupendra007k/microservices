@@ -51,7 +51,7 @@ namespace productservice.Controllers
         [HttpPost("add")]
         public async Task<IActionResult> AddProduct([FromForm] Product product)
         {
-            var res=await _productRepository.AddProduct(product);
+            var res=await _productRepository.AddProduct(Guid.Empty,product);
             return Ok(res);
 
         }
@@ -60,7 +60,7 @@ namespace productservice.Controllers
 
         public async Task<IActionResult> UpdateProduct([FromForm] Product product,Guid id)
         {
-            var res = await _productRepository.UpdateProduct(id, product);
+            var res = await _productRepository.AddProduct(id, product);
             return Ok(res);
         }
 

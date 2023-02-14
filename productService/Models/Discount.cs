@@ -14,5 +14,7 @@ namespace productservice.Models
         public string Description { get; set; }
         public double DiscountPercent { get; set; }
         public bool Active { get; set; }
+
+        public ICollection<Product> Products { get; set; }
     }
 }
