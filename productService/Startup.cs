@@ -9,12 +9,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
 using Microsoft.Extensions.Logging;
 using productservice.Data;
 using productservice.Repositories;
 using Microsoft.EntityFrameworkCore;
 using productservice.Models;
+using productservice.Controllers;
+using productservice.NewFolder;
 
 namespace productService
 {
@@ -35,6 +36,7 @@ namespace productService
             services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("Ecommerce"));
             services.AddControllers();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddHttpClient<IInventoryClient,InventoryClient>();
         }
 
         public static void SeedData(DataContext context)

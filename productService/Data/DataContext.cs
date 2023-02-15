@@ -22,34 +22,5 @@ namespace productservice.Data
         {
             optionsBuilder.UseInMemoryDatabase(databaseName:"Ecommerce");
         }
-
-
-       /* protected override void OnModelCreating(ModelBuilder modelbuilder)
-        {
-            modelbuilder.Entity<ProductCategory>().HasData(
-                new ProductCategory {
-                    ProductCategoryId=Guid.NewGuid(),
-                    Name="Clothing",
-                    Description="cscsdc"
-                },
-                new ProductCategory {
-                    ProductCategoryId = Guid.NewGuid(),
-                    Name = "Footwear",
-                    Description = "cscsdasdasdc"
-                },
-                new ProductCategory {
-                    ProductCategoryId = Guid.NewGuid(),
-                    Name = "jewellery",
-                    Description = "cscssadasddc"
-                }
-                );
-        }*/
-
-
-
-     
-
-
-    
     }
 }

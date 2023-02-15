@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using productservice.Models;
+using productservice.NewFolder;
 using productservice.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace productservice.Controllers
@@ -16,11 +17,14 @@ namespace productservice.Controllers
     {
         private readonly IProductRepository _productRepository;
         private readonly ILogger<ProductController> _logger;
+        private readonly IInventoryClient _inventoryClient;
 
-        public ProductController(IProductRepository productRepository,ILogger<ProductController> logger)
+        public ProductController(IProductRepository productRepository,ILogger<ProductController> logger,IInventoryClient inventoryClient)
         {
             _logger = logger;
             _productRepository = productRepository;
+            _inventoryClient = inventoryClient;
+            
         }
 
         [HttpGet("getall")]
@@ -52,6 +56,10 @@ namespace productservice.Controllers
         public async Task<IActionResult> AddProduct([FromForm] Product product)
         {
             var res=await _productRepository.AddProduct(Guid.Empty,product);
+            if (res != null)
+            {
+                await _inventoryClient.SendProductToInventory(product);
+            }
             return Ok(res);
 
         }
