@@ -30,3 +30,6 @@ D:\microservices\productService\obj\Debug\netcoreapp3.1\productservice.csproj.Co
 D:\microservices\productService\obj\Debug\netcoreapp3.1\productservice.dll
 D:\microservices\productService\obj\Debug\netcoreapp3.1\productservice.pdb
 D:\microservices\productService\obj\Debug\netcoreapp3.1\productservice.genruntimeconfig.cache
+D:\microservices\productService\obj\Debug\netcoreapp3.1\productservice.csproj.AssemblyReference.cache
+D:\microservices\productService\bin\Debug\netcoreapp3.1\Castle.Core.dll
+D:\microservices\productService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll

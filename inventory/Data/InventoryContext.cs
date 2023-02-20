@@ -16,6 +16,7 @@ namespace inventory.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {
             optionBuilder.UseInMemoryDatabase(databaseName:"Inventory");
+            optionBuilder.UseLazyLoadingProxies();
         }
 
     }

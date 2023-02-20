@@ -76,7 +76,7 @@ namespace productService
             {
                 Id=Guid.NewGuid(),
                 Name= "Big Bachat Dhamaal",
-                Description= "Month beginning grocey and pantry sale for the month of every month!",
+                Description= "Grocey and pantry sale in the begining of every month!",
                 DiscountPercent=20,
                 Active=true
             };

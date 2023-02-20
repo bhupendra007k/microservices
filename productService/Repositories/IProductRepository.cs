@@ -7,7 +7,7 @@ namespace productservice.Repositories
 {
     public interface IProductRepository
     {
-        Task<List<Product>> GetProducts();
+        Task<dynamic> GetProducts();
 
         Task<Product> AddProduct(Guid Id,Product product);
 

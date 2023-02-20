@@ -28,7 +28,7 @@ namespace productservice.Controllers
         }
 
         [HttpGet("getall")]
-        public  async Task<IList<Product>> Get()
+        public  async Task<dynamic> Get()
         {
 
             var result =await _productRepository.GetProducts();
@@ -58,7 +58,26 @@ namespace productservice.Controllers
             var res=await _productRepository.AddProduct(Guid.Empty,product);
             if (res != null)
             {
-                await _inventoryClient.SendProductToInventory(product);
+                try
+                {
+                    var response=await _inventoryClient.SendProductToInventory(product);
+                    if (response)
+                    {
+                        _logger.LogInformation("connection to inventory service established");
+                    }
+                    else
+                    {
+                        return BadRequest("unable to connect to invetory service");
+                    }
+                }
+                catch(Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+            }
+            else
+            {
+                return BadRequest("Unable to fullfill request at the moment");
             }
             return Ok(res);
 
@@ -74,12 +93,16 @@ namespace productservice.Controllers
 
         [HttpDelete("delete/{id}")]
 
-        public IActionResult RemoveProduct(Guid Id)
+        public async Task<IActionResult> RemoveProduct(Guid Id)
         {
             var res = _productRepository.RemoveProduct(Id);
             if (res == true)
             {
-                return Ok($"product with id:{Id} is removed successfully");
+                var response=await _inventoryClient.DeleteProductFromInventory(Id);
+                if (response) 
+                {
+                    return Ok($"product with id:{Id} is removed successfully");
+                }
             }
             return NotFound($"No item with id:{Id} found");
         }

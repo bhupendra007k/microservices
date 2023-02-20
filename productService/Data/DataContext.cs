@@ -21,6 +21,7 @@ namespace productservice.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseInMemoryDatabase(databaseName:"Ecommerce");
+            optionsBuilder.UseLazyLoadingProxies();
         }
     }
 }

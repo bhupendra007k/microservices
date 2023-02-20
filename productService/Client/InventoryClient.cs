@@ -21,7 +21,7 @@ namespace productservice.NewFolder
 
         }
 
-        public async Task SendProductToInventory(Product product)
+        public async Task<bool> SendProductToInventory(Product product)
         {
             /*var options = new JsonSerializerOptions
             {
@@ -39,6 +39,27 @@ namespace productservice.NewFolder
             if (response.IsSuccessStatusCode)
             {
                 Console.WriteLine("synced");
+                return true;
+            }
+            else{
+                return false;
+
+            }
+        }
+
+        public async Task<bool> DeleteProductFromInventory(Guid Id)
+        {
+            /*string json = JsonConvert.SerializeObject(Id);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");*/
+            var response = await _httpClient.DeleteAsync("https://localhost:3001/inventory/delete/"+Id);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

@@ -23,11 +23,13 @@ namespace productservice.Repositories
             _logger = logger;   
             
         }
-        public async Task<List<Product>> GetProducts()
+        public async Task<dynamic> GetProducts()
         {
           
             var list = await _context.Products.ToListAsync();
-            return list;
+            var count= list.Count();
+
+            return new { list,count};
         }
 
         public async Task<Product> AddProduct(Guid Id,Product product)

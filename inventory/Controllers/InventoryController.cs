@@ -38,6 +38,23 @@ namespace inventory.Controllers
             return await _inventoryRepository.GetAllInventory();
             
         }
+
+        [HttpGet("getinventory/{id}")]
+
+        public async Task<Inventory> GetInventoryById(Guid Id)
+        {
+            return await _inventoryRepository.GetInventoryById(Id);
+        
+        }
+
+        [HttpDelete("delete/{id}")]
+
+        public async Task<string> DeleteProductFromInventory(Guid Id)
+        {
+            return await _inventoryRepository.DeleteProductsFromInventory(Id);
+
+        }
+       
        
     }
 }

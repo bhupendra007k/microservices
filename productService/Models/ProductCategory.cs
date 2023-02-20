@@ -14,7 +14,7 @@ namespace productservice.Models
         public string Description { get; set; }
 
         //Navigation Property
-        public ICollection<Product> Products { get; set; }
+        public virtual IList<Product> Products { get; set; }
 
 
 
