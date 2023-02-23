@@ -1,0 +1,174 @@
+{
+    "Routes": [{
+            "DownstreamPathTemplate": "/product/add",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "product",
+                "Port": 80
+            }],
+            "UpstreamPathTemplate": "/api/addproduct",
+            "UpstreamHttpMethod": ["Post"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            },
+            "RouteClaimsRequirement": {
+                "Role": "Admin"
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/product/update/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "product",
+                "Port": 80
+            }],
+            "UpstreamPathTemplate": "/api/updateproduct/{id}",
+            "UpstreamHttpMethod": ["Post"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            },
+            "RouteClaimsRequirement": {
+                "Role": "Admin"
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/product/getall",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "product",
+                "Port": 80
+            }],
+            "UpstreamPathTemplate": "/api/getall",
+            "UpstreamHttpMethod": ["Get"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            },
+            "RouteClaimsRequirement": {
+                "Role": "Customer"
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/product/delete/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "product",
+                "Port": 80
+            }],
+            "UpstreamPathTemplate": "/api/delete/{id}",
+            "UpstreamHttpMethod": ["Delete"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            },
+            "RouteClaimsRequirement": {
+                "Role": "Admin"
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/product/getproductbyid/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "product",
+                "Port": 80
+            }],
+            "UpstreamPathTemplate": "/api/getproductbyid/{id}",
+            "UpstreamHttpMethod": ["Get"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/inventory/getAllInventory",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "inventory",
+                "Port": 80
+            }],
+            "UpstreamPathTemplate": "/api/getAllInventory",
+            "UpstreamHttpMethod": ["Get"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            },
+            "RouteClaimsRequirement": {
+                "Role": "Admin"
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/inventory/getInventoryById/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "inventory",
+                "Port": 80
+            }],
+            "UpstreamPathTemplate": "/api/getInventoryById/{id}",
+            "UpstreamHttpMethod": ["Get"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            },
+            "RouteClaimsRequirement": {
+                "Role": "Admin"
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/user/login",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "user",
+                "Port": 80
+            }],
+            "UpstreamPathTemplate": "/api/userLogin",
+            "UpstreamHttpMethod": ["Post"]
+        },
+        {
+            "DownstreamPathTemplate": "/cart/addtocart/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "shopping",
+                "Port": 80
+            }],
+            "UpstreamPathTemplate": "/api/addtocart/{id}",
+            "UpstreamHttpMethod": ["Post"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/cart/removefromcart/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "shopping",
+                "Port": 80
+            }],
+            "UpstreamPathTemplate": "/api/removefromcart/{id}",
+            "UpstreamHttpMethod": ["Delete"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/cart/viewcart",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [{
+                "Host": "shopping",
+                "Port": 80
+            }],
+            "UpstreamPathTemplate": "/api/viewcart",
+            "UpstreamHttpMethod": ["Get"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "http://localhost:5020"
+    }
+}

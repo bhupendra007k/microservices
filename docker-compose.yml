@@ -2,11 +2,21 @@ version: "3.8"
 services:
   apigateway:
     build: ./apiGateway
+    ports:
+      - "5020:80"
   inventory:
     build: ./inventory
-  productService:
+    ports:
+      - "3000:80"
+  product:
     build: ./productService
-  shoppongCart:
-    build: ./shoppongCart
-  userService:
+    ports:
+      - "5000:80"
+  shopping:
+    build: ./shoppingCart
+    ports:
+      - "7000:80"
+  user:
     build: ./userService
+    ports:
+      - "6001:80"
