@@ -16,6 +16,7 @@ using Microsoft.EntityFrameworkCore;
 using productservice.Models;
 using productservice.Controllers;
 using productservice.NewFolder;
+using productservice.Client;
 
 namespace productService
 {
@@ -37,6 +38,7 @@ namespace productService
             services.AddControllers();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddHttpClient<IInventoryClient,InventoryClient>();
+            services.AddHttpClient<ICartClient, CartClient>();
         }
 
         public static void SeedData(DataContext context)

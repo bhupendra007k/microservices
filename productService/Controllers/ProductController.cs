@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using productservice.Client;
 using productservice.Models;
 using productservice.NewFolder;
 using productservice.Repositories;
@@ -18,12 +19,14 @@ namespace productservice.Controllers
         private readonly IProductRepository _productRepository;
         private readonly ILogger<ProductController> _logger;
         private readonly IInventoryClient _inventoryClient;
+        private readonly ICartClient _cartClinet;
 
-        public ProductController(IProductRepository productRepository,ILogger<ProductController> logger,IInventoryClient inventoryClient)
+        public ProductController(IProductRepository productRepository,ILogger<ProductController> logger,IInventoryClient inventoryClient,ICartClient cartClient)
         {
             _logger = logger;
             _productRepository = productRepository;
             _inventoryClient = inventoryClient;
+            _cartClinet = cartClient;
             
         }
 
@@ -44,7 +47,7 @@ namespace productservice.Controllers
             return Ok(res);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("getproductbyid/{id}")]
 
         public async Task<IActionResult> GetProductById(Guid Id)
         {
@@ -60,8 +63,9 @@ namespace productservice.Controllers
             {
                 try
                 {
-                    var response=await _inventoryClient.SendProductToInventory(product);
-                    if (response)
+                    var inventoryClientResponse=await _inventoryClient.SendProductToInventory(product);
+                    var cartClientResponse = await _cartClinet.SendProductToCartService(product);
+                    if (inventoryClientResponse&&cartClientResponse)
                     {
                         _logger.LogInformation("connection to inventory service established");
                     }

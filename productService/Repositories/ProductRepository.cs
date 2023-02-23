@@ -34,28 +34,34 @@ namespace productservice.Repositories
 
         public async Task<Product> AddProduct(Guid Id,Product product)
         {
- 
-            var category = _context.ProductCategory.Where(x => x.Name == product.ProductCategory).FirstOrDefault();
-            var sale = _context.Discount.Where(x => x.Name == product.Sale).FirstOrDefault();
-            if (sale != null)
-            {
-                product.DiscountId = sale.Id;
-            }
-            product.ProductCategoryId = category.Id;
+            
+                var category = _context.ProductCategory.Where(x => x.Name == product.ProductCategory).FirstOrDefault();
+                var sale = _context.Discount.Where(x => x.Name == product.Sale).FirstOrDefault();
+                var update = _context.Products.Where(x => x.Id == Id).FirstOrDefault();
+                if (sale != null)
+                {
+                    product.DiscountId = sale.Id;
+                }
+                product.ProductCategoryId = category.Id;
 
-            if (product.Id == null || product.Id == Guid.Empty)
-            {
-                _context.Products.Add(product);
+                if (Id == null || Id == Guid.Empty)
+                {
+                    _context.Products.Add(product);
+                    await _context.SaveChangesAsync();
+                    return product;
+                }
 
-            }
+                else
+                {
+                    
+                    _context.Products.Update(product);
+                    _context.SaveChanges();
+                    return product;
 
-            else
-            {
-                _context.Products.Update(product);
-            }
+                }
 
-            await _context.SaveChangesAsync();
-            return product;
+            
+            
 
         }
 

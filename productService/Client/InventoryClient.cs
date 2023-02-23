@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using productservice.Models;
 using System;
@@ -14,10 +15,12 @@ namespace productservice.NewFolder
     public class InventoryClient : IInventoryClient
     {
         private readonly HttpClient _httpClient;
+        private readonly IConfiguration _configuration;
 
-        public InventoryClient(HttpClient httpClient)
+        public InventoryClient(HttpClient httpClient,IConfiguration configuration)
         {
             _httpClient = httpClient;
+            _configuration = configuration;
 
         }
 
@@ -35,7 +38,7 @@ namespace productservice.NewFolder
             });
             /*var json = JsonSerializer.Serialize(product, options);*/
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await _httpClient.PostAsync("https://localhost:3001/inventory/add", httpContent);
+            var response = await _httpClient.PostAsync($"{_configuration["InventoryService"]}/inventory/add", httpContent);
             if (response.IsSuccessStatusCode)
             {
                 Console.WriteLine("synced");
@@ -51,7 +54,7 @@ namespace productservice.NewFolder
         {
             /*string json = JsonConvert.SerializeObject(Id);
             var content = new StringContent(json, Encoding.UTF8, "application/json");*/
-            var response = await _httpClient.DeleteAsync("https://localhost:3001/inventory/delete/"+Id);
+            var response = await _httpClient.DeleteAsync($"{_configuration["InventoryService"]}/inventory/delete/"+Id);
 
             if (response.IsSuccessStatusCode)
             {
