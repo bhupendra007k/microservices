@@ -1,7 +1,12 @@
 version: "3.8"
 services:
   apigateway:
+    build: ./apiGateway
   inventory:
+    build: ./inventory
   productService:
+    build: ./productService
   shoppongCart:
+    build: ./shoppongCart
   userService:
+    build: ./userService

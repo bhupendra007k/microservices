@@ -29,7 +29,7 @@ namespace userService.Repositories
 
         public async Task<string> Login(User request)
         {
-            var user =_context.Users.FirstOrDefault(u => u.Email == request.Email);
+            var user =_context.Users.Where(u => u.Email == request.Email).FirstOrDefault();
             if (user == null)
             {
                 return null;

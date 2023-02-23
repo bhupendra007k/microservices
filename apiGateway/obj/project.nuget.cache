@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WnUfDvNXWQyHyHGEMWPnD920PvwcEXAToYl3LdK2wir5WDSoov8J9DkZQqnCx2zbd7l/l6utkpyaHhbF25uV8A==",
+  "dgSpecHash": "9dnMfAzrBXFcgg66Xbthw5G+XPzrmDXdABVc0y5lXM18rdNu9TX3ELL81tYII3ENzP1+eRkDCebPBq0SuTHLVA==",
   "success": true,
   "projectFilePath": "D:\\microservices\\apiGateway\\apiGateway.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\5.5.0\\microsoft.identitymodel.protocols.openidconnect.5.5.0.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.5.0\\microsoft.identitymodel.tokens.5.5.0.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",

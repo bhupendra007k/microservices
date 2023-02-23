@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iHj4ux5e4MmNoIhEvSM06PpR7MbmY4Irhsr7slAsNr/AAJxHkkcAN7S7mli1KTGipmDPromnP3KQoHk6e7vsJQ==",
+  "dgSpecHash": "FRGgWam1wy9uQC4ENe7UuLqW7Dnr+hwqzYPZWzJ8VPNeMCyhDYauDEzo4+AXq/NGWwFSPjl5O8bhqYABNgvFtQ==",
   "success": true,
   "projectFilePath": "D:\\microservices\\userService\\userService.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.5.0\\microsoft.identitymodel.tokens.5.5.0.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",

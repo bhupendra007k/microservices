@@ -4,6 +4,6 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup>
-    <ActiveDebugProfile>userService</ActiveDebugProfile>
+    <ActiveDebugProfile>Docker</ActiveDebugProfile>
   </PropertyGroup>
 </Project>

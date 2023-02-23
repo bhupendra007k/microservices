@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LT0r34qxAH1VL/sU9CZ12h3DHRTq64xJHqySwMH3ug1u4DrvyJDlXVE0r/DrJ3Zjjfna9KCyBtATYJYu+GdzgQ==",
+  "dgSpecHash": "xjyedyNNuV1nOKFRHg87A3rDpRtFah3wXV4KuC5o8vrDkC2/YjCLP3NSFi+sVcQexnnpCBueJ1Rl1YQKdKnuqQ==",
   "success": true,
   "projectFilePath": "D:\\microservices\\shoppingCart\\shoppingCart.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,7 @@
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.5.0\\microsoft.identitymodel.tokens.5.5.0.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\bhupendarbhandari\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
